@@ -1,0 +1,6 @@
+<div><input id="search" type="text" class="inputCustom" placeholder="Search" ng-model="search.fname"></div>
+<div class="checkbox" ng-repeat="contact in contacts | filter:search:strict | orderBy:'fname'">
+	<label ng-click="viewContactDetail(contact._id)">
+		{{ contact.fname }} {{ contact.lname }}
+	</label>
+</div>

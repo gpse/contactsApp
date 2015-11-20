@@ -1,0 +1,63 @@
+html{
+overflow-y:scroll; 
+}
+
+body{
+	padding:10px; 
+}
+
+
+
+#mainView{
+	background-color: #EEEEEE;
+	display: block;
+}
+
+@media only screen and (max-device-width: 800px) {
+	#mainView{
+		background-color: #EEEEEE;
+		display: none;
+	}
+	
+}
+
+#listView{
+	background-color: #DDDDDD;
+}
+
+
+.spacer{
+	height: 20px;
+}
+
+.inputCustom{
+	border: 1px solid #CCCCCC;
+	height:25px;
+	width:100%;
+}
+
+.alphabet{
+	display: block;
+	cursor:pointer;
+	padding: 5px;
+}
+
+.biggray{
+	background-color:#6a6a6a;
+	color:#FFFFFF;
+	border: 1px solid #6a6a6a;
+	height: 30px;
+	width: 100px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.bigblue{
+	background-color:#3399cc;
+	color:#FFFFFF;
+	border: 1px solid #3399cc;
+	height: 30px;
+	width: 100px;
+	padding: 5px;
+	cursor: pointer;
+}

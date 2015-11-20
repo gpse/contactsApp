@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="homeApp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Phone Contacts App</title>
+
+	<!-- Style -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="general.css">
+
+	<!-- Scripts -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script><!-- load angular -->
+	<script src="core.js"></script>
+
+</head>
+
+<body ng-controller="mainController">
+
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-sm-1"><img src="images/add.png" width="30" ng-click="showAddContact()"></div>
+		<div class="col-sm-11"><a ng-click="status=0;viewContacts();optimizeDisplay()">All Contacts</a></div>
+	</div>
+
+	<div class="row"><hr></div>
+
+	<div class="row">
+		<div id="listView" class="col-sm-4">
+			<view-contacts></view-contacts>
+		</div>
+		<div class="col-sm-1">
+			<div ng-repeat="alphabet in ['#', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',  'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']">
+				<span class="alphabet" ng-model="albhabet" ng-click="filterContacts(alphabet)">{{ alphabet | uppercase }}</span>
+			</div>
+		</div>
+		<div id="mainView" class="col-sm-7">
+		<div ng-show="status == 0"><home-contacts></home-contacts></div>
+		<div ng-show="status == 1"><add-contacts></add-contacts></div>
+		<div ng-show="status == 2"><view-contact></view-contact></div>
+		<div ng-show="status == 3"><edit-contact></edit-contact></div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>
